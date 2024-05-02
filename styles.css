@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+
+  --ff-main: "Overpass", sans-serif;
+  --fw-reg: 400;
+  --fw-bold: 700;
+}
+
+/* CSS Reset: https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+================
+Main CSS
+================
+*/
+
+main {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--ff-main);
+  background-color: var(--very-dark-blue);
+}
+
+article {
+  margin: 0 auto;
+}
+
+.review__container,
+.submitted__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  margin: 0 1rem;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background: rgb(35,42,52);
+  background: linear-gradient(180deg, rgba(35,42,52,1) 0%, rgba(24,30,39,1) 100%); 
+}
+
+@media only screen and (min-width: 500px) {
+  .review__container,
+  .submitted__container {
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+}
+
+/*
+================
+Review CSS
+================
+*/
+
+.review__icon {
+  padding: 1rem;
+  border-radius: 100%;
+  background-color: var(--dark-blue);
+}
+
+.review__header {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.review__text {
+  color: var(--light-grey);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+
+.review__btns-group {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+}
+
+.review__btns-group button {
+  --circle-sizing: clamp(2.5rem, 2.234rem + 0.851vw, 3.4rem);
+
+  color: var(--medium-grey);
+  text-align: center;
+
+  min-height: var(--circle-sizing);
+  min-width: var(--circle-sizing);
+  line-height: var(--circle-sizing);
+
+  border: none;
+  border-radius: 100%;
+  background-color: var(--dark-blue);
+}
+
+.review__btns-group button:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--orange);
+}
+
+.review__submit-btn {
+  align-self: stretch;
+
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: .8rem 0;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--orange);
+}
+
+.review__submit-btn:hover {
+  cursor: pointer;
+  color: var(--orange);
+  background-color: #fff;
+}
+
+.rating-selected {
+  color: #fff !important;
+  background-color: var(--medium-grey) !important;
+}
+
+/*
+================
+Submitted CSS
+================
+*/
+
+.submitted__container {
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.submitted__container img {
+  align-self: center;
+}
+
+.submitted__header {
+  color: var(--orange);
+  background-color: var(--dark-blue);
+  padding: .5rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: var(--fw-reg);
+}
+
+.submitted__container h2 {
+  font-size: 2.4rem;
+}
+
+.submitted__container p {
+  color: var(--light-grey);
+}
+
+/*
+================
+Helper Classes
+================
+*/
+
+.hidden {
+  display: none;
+}
